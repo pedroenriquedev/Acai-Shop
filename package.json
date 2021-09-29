@@ -1,0 +1,44 @@
+{
+  "name": "acaiShop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "parcel build src/js/index.js --out-dir public/js --public-url .",
+    "server": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/plugin-transform-runtime": "^7.14.3",
+    "@babel/preset-env": "^7.14.4"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-mongo-sanitize": "^2.0.2",
+    "express-rate-limit": "^5.2.6",
+    "helmet": "^4.6.0",
+    "hpp": "^0.2.3",
+    "html-to-text": "^8.0.0",
+    "js-base64": "^3.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.14",
+    "nodemailer": "^6.6.3",
+    "parcel-bundler": "^1.12.5",
+    "pug": "^3.0.0",
+    "stripe": "^8.171.0",
+    "validator": "^13.5.2",
+    "xss-clean": "^0.1.1"
+  },
+  "engines": {
+    "node": "^12"
+  }
+}

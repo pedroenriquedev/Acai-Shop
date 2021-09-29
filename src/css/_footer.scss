@@ -1,0 +1,23 @@
+.footer {
+  background-image: linear-gradient(
+    to right top,
+    #6b2a59,
+    #6b3266,
+    #6a3a73,
+    #664280,
+    #604b8d
+  );
+  min-height: 30rem;
+  margin-top: 5rem;
+  padding: 2rem 4rem;
+  border-radius: 16px;
+  box-shadow: 0px 0px 33px 0px rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  p {
+    color: #6b2a59;
+    text-transform: uppercase;
+  }
+}

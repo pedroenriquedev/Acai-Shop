@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acai Brasil</title>
+  <link rel="stylesheet" href="./checkout.css" />
+  <link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+  rel="stylesheet"
+  />
+  <script
+  src="https://kit.fontawesome.com/4a0b67b127.js"
+  crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+  <nav class="nav">
+    <a class="nav-item">
+      <i class="fas fa-shopping-cart"></i><span class="shopCartNum">0</span></a>
+    </nav>
+    
+    <div class="shoppingCart">
+      <div class="shoppingCart__top">
+        <h2 class="heading-2">
+          Shopping cart
+        </h2>
+        
+        
+      </div>
+      
+      <div class="shoppingCart__label">
+        <div class="shoppingCart__label-product">
+          Product
+        </div>
+        
+        <div class="shoppingCart__label-quantity">
+          Quantity
+        </div>
+        
+        <div class="shoppingCart__label-price">
+          Price
+        </div>
+        
+        <div class="shoppingCart__label-total">
+          Total
+        </div>
+      </div>
+      
+      <ul class="shoppingCart__items"> 
+        <li class="shoppingCart__item">
+          <button class="shoppingCart__item-remove">remove</button>
+          <a class="shoppingCart__item-edit" href="#">edit</a>
+          
+          <div class="img"></div>
+          <div class="shoppingCart__item-description">
+            <h2>24 oz. cup</h2>
+            <ul>
+              <h3>Fruits</h3>
+              <li>Banana</li>
+              <li>Strawberry</li>
+            </ul>
+            
+            <ul>
+              <h3>Powder</h3>
+              <li>Whey Protein</li>
+            </ul>
+            
+            <ul>
+              <h3>Toppings</h3>
+              <li>Granola</li>
+            </ul>
+          </div>
+          
+          <div class="shoppingCart__item-quantity">
+            <button>-</button>
+            2
+            <button>+</button>
+          </div>
+          
+          <div class="shoppingCart__item-price">$ 12.00</div>
+          
+          <div class="shoppingCart__item-total">$ 24.00</div>
+        </li> 
+      </ul>
+      
+      <div class="shoppingCart__total">
+        Total: $<span class="total">32.23</span>
+      </div> 
+      
+      <a href="#" class="btn btn__checkout" id="checkoutBtn">Checkout</a>
+      <a href="#" class="btn__addItems">Add more items</a>
+    </div>
+    <script src="checkout.js"></script>
+  </body>
+  </html>
+  

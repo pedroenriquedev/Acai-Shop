@@ -1,0 +1,27 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Join us!
+    link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap' rel='stylesheet')
+    link(rel='stylesheet' href='./css/main.css')
+    script(src='https://kit.fontawesome.com/4a0b67b127.js' crossorigin='anonymous')
+  body.login
+    include navBar.pug
+    form.loginForm
+      input#loginFormEmail(class='loginForm__email' type='email' placeholder='Email' required)
+      input#loginFormPassword(class='loginForm__password' type='password' placeholder='Password' required)
+      a.link.link__forgotPassword(href='') Forgot your password?
+      button(class='btn login__btn') Login
+    .orBox or
+    form.signUpForm
+      input(class='signUp__name' type='text' placeholder='Name' required)
+      input#formEmail(class='signUp__email' type='email' placeholder='Email' required)
+      input#formPassword(class='signUp__password' type='password' placeholder='Password' required)
+      input#formPasswordConfirm(class='signUp__confirmPassword' type='password' placeholder='Confirm Password' required) 
+      button(class='btn signUp__btn') Sign up
+    include footer.pug
+  script(src='./js/index.js')
+  script(src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js')

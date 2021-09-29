@@ -1,0 +1,102 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Acai Brasil
+  style
+    include ../public/css/main.css
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap', rel='stylesheet')
+  script(src='https://kit.fontawesome.com/4a0b67b127.js', crossorigin='anonymous')
+  script(src='https://cdn.jsdelivr.net/npm/js-base64@3.6.0/base64.min.js')
+include navBar.pug
+.createAnAccount__container
+  .createAnAccount__message
+    h2.headin-2 Would you like to create an account?
+    span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae perferendis eos inventore doloremque odit!
+    a.btn.loginBtn(href='/login') Yes, I would!
+    a.btn.guestCheckoutBtn(href='/') No, thanks!
+.shoppingCart
+  .shoppingCart__top
+    h2.heading-2
+      | Shopping cart
+  .shoppingCart__label
+    .shoppingCart__label-product
+      | Product
+    .shoppingCart__label-quantity
+      | Quantity
+    .shoppingCart__label-price
+      | Price
+    .shoppingCart__label-total
+      | Total
+  ul.shoppingCart__items
+    each item, i in items
+      li(class="shoppingCart__item shoppingCart__item-"+i)
+        button.shoppingCart__item-remove remove
+        a.shoppingCart__item-edit(href='#') edit
+        .img
+        .shoppingCart__item-description
+          if item.size === 0
+            h2 12 oz. cup
+          else if item.size === 1
+            h2 24 oz. cup 
+          else if item.size === 2
+            h2 32 oz. bowl  
+          else if item.size === 3
+            h2 42 oz. bowl    
+          - const newArray = function(arr){  
+          -   return arr.filter(el => el !== -1)
+          - }  
+          ul
+            h3 Fruits
+            if newArray(item.addOns.fruits).length !== 0   
+              each fruit in newArray(item.addOns.fruits) 
+                li= fruit
+            else 
+              li -    
+          ul
+            h3 Powder
+            if newArray(item.addOns.powder).length !== 0
+             each powder in item.addOns.powder
+               if powder !== -1
+                 li= powder
+            else 
+              li -     
+          ul
+            h3 Toppings
+            if newArray(item.addOns.toppings).length !== 0
+              each topping in item.addOns.toppings
+                if topping !== -1
+                  li= topping 
+            else 
+              li -      
+          ul
+            h3 Drizzle
+            if newArray(item.addOns.drizzle).length !== 0
+              each drizzle in item.addOns.drizzle
+                if drizzle !== -1
+                  li= drizzle      
+            else 
+              li -       
+        .shoppingCart__item-quantity
+          button.removeQtBtn -
+          span #{item.quantity}
+          button.addQtBtn +
+        .shoppingCart__item-price $ #{item.price}
+        .shoppingCart__item-total $ #{item.price}
+  .shoppingCart__total
+    | Total: $
+    - const getTotal = (items) => {
+    - let total = 0;
+    - items.forEach((el, i) => total = total + el.price);
+    - return total;
+    - }
+    span.total  #{getTotal(items)}
+  if user  
+    a#checkoutBtn.btn.btn__checkout(href='#') Checkout
+  else 
+    a#checkoutBtn.btn.btn__checkout(href='#') Checkout as a guest
+  a.btn.btn__addItems(href='/') Add more items
+include footer.pug 
+script(src='/js/index.js')
+    
+     

@@ -1,0 +1,96 @@
+/* 
+0 - 600px: Phone
+600 - 900px: Tablet Portrait
+900 - 1200px:  Tablet Landscape
+1200 - 1800px: Desktop
+1800px+ : Big Desk
+*/
+
+/*
+$breakpoint arguement choices:
+- phone 
+- tab-port
+- tab-land
+- big-desktop  
+*/
+
+.login {
+  background-image: linear-gradient(
+    to right top,
+    #6b2a59,
+    #6b3266,
+    #6a3a73,
+    #664280,
+    #604b8d
+  );
+
+  .loginBtn {
+    visibility: hidden;
+  }
+}
+
+form {
+  display: flex;
+  margin: 4rem auto;
+  flex-direction: column;
+  max-width: 48rem;
+
+  background-color: #fff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 3px 5px 18px -2px rgba(0, 0, 0, 0.2);
+  a {
+    font-size: 1rem;
+    align-self: flex-end;
+  }
+  button {
+    background-color: #fff;
+    border: 1px solid var(--seconday-color);
+    color: var(--seconday-color);
+    align-self: center;
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+      //border-color: #fff;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+input {
+  border: 1px solid var(--light-color);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  background-color: var(--light-color);
+  margin: 1rem 0;
+  transition: 0.2s;
+  &:focus {
+    background-color: #fff;
+    border-color: var(--primary-color);
+    outline: none;
+  }
+}
+
+.orBox {
+  color: var(--light-color);
+  text-transform: uppercase;
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+input,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.nav-login {
+  display: flex;
+  justify-content: center;
+  a {
+    color: #fff !important;
+  }
+}

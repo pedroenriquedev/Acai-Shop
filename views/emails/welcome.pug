@@ -1,0 +1,16 @@
+extends baseEmail
+
+block content
+    p Hi #{firstName},
+    p Welcome to Acai Brasil, we're glad to have you 🎉🙏
+    table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+        tbody
+            tr
+                td(align='left')
+                    table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+                        tbody
+                            tr
+                                td
+                                    a(href=`${url}`, target='_blank') Order an acai NOW!
+    p If you need any help with ordering your acai, please don't hesitate to contact me!
+    p - Pedro Xavier, CEO

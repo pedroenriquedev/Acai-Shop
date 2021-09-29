@@ -1,0 +1,11 @@
+nav.nav
+  if user 
+    div.nav-main
+      a.user(href='')= user.name.split(' ')[0]
+      a.logo(href='/') LOGO
+      a.logoutBtn(href='') Log Out
+  else 
+    div.nav-main
+      a.loginBtn(href='/login') Sign in
+      a.logo(href='/') LOGO
+      span.nav-spaceFill .  

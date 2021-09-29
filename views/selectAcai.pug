@@ -1,0 +1,252 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Acai Brasil
+  link(rel='stylesheet' href='./css/main.css')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap' rel='stylesheet') 
+  script(src='https://kit.fontawesome.com/4a0b67b127.js' crossorigin='anonymous')
+include navBar.pug  
+main
+  .size
+    h3.heading-3
+      | Select the size
+      span Required
+    .card__container
+      if item.size == 0
+        input#size-1(type='radio' name='size' data-size='0' checked='')
+      else
+        input#size-1(type='radio' name='size' data-size='0')
+      label.card(for='size-1')
+        .card__text.card__text-1
+          | 12 oz. cup
+        .card__text.card__text-2
+          | $ 6
+      if item.size == 1
+        input#size-2(type='radio' name='size' data-size='1' checked='')
+      else
+        input#size-2(type='radio' name='size' data-size='1')
+      label.card(for='size-2')
+        .card__text.card__text-1
+          | 24 oz. cup
+        .card__text.card__text-2
+          | $ 11
+      if item.size == 2    
+        input#size-3(type='radio' name='size' data-size='2' checked='')
+      else
+        input#size-3(type='radio' name='size' data-size='2')
+      label.card(for='size-3')
+        .card__text.card__text-1
+          | 32 oz. bowl
+        .card__text.card__text-2
+          | $ 14
+      if item.size == 3    
+        input#size-4(type='radio' name='size' data-size='3' checked='')
+      else
+        input#size-4(type='radio' name='size' data-size='3') 
+      label.card(for='size-4')
+        .card__text.card__text-1
+          | 42 oz. bowl
+        .card__text.card__text-2
+          | $ 18
+  .addOn
+    h3.heading-3
+      | Select your add-ons
+      span Optional
+    #fruitAddOn.option__container
+      h2.heading-2
+        | Fruits
+        span Choose up to 4
+      if item.addOns.fruits[0] !== -1   
+        input#option-1__1(type='checkbox' data-value='Strawberry' checked='')
+      else 
+        input#option-1__1(type='checkbox' data-value='Strawberry')
+      label.option.option__selected(for='option-1__1')
+        .option__description
+          | Strawberry
+      if item.addOns.fruits[1] !== -1    
+        input#option-1__2(type='checkbox' data-value='Banana' checked='')
+      else
+        input#option-1__2(type='checkbox' data-value='Banana') 
+      label.option.option__selected(for='option-1__2')
+        .option__description
+          | Banana
+      if item.addOns.fruits[2] !== -1      
+        input#option-1__3(type='checkbox' data-value='Kiwi' checked='')
+      else
+        input#option-1__3(type='checkbox' data-value='Kiwi')
+      label.option.option__selected(for='option-1__3')
+        .option__description
+          | Kiwi
+      if item.addOns.fruits[3] !== -1        
+        input#option-1__4(type='checkbox' data-value='Mango' checked='')
+      else
+        input#option-1__4(type='checkbox' data-value='Mango')  
+      label.option.option__selected(for='option-1__4')
+        .option__description
+          | Mango
+      if item.addOns.fruits[4] !== -1    
+        input#option-1__5(type='checkbox' data-value='Pineapple' checked='')
+      else
+        input#option-1__5(type='checkbox' data-value='Pineapple')
+      label.option.option__selected(for='option-1__5')
+        .option__description
+          | Pineapple
+      if item.addOns.fruits[5] !== -1     
+        input#option-1__6(type='checkbox' data-value='Coconout' checked='')
+      else 
+        input#option-1__6(type='checkbox' data-value='Coconout') 
+      label.option.option__selected(for='option-1__6')
+        .option__description
+          | Coconout
+    #toppingAddOn.option__container
+      h2.heading-2
+        | Topping
+        span Choose up to 4
+      if item.addOns.toppings[0] !== -1  
+        input#option-2__1(type='checkbox' data-value='Chia Seeds' checked='')
+      else
+        input#option-2__1(type='checkbox' data-value='Chia Seeds') 
+      label.option.option__selected(for='option-2__1')
+        .option__description
+          | Chia Seeds
+      if item.addOns.toppings[1] !== -1      
+        input#option-2__2(type='checkbox' data-value='Mint' checked='')
+      else
+        input#option-2__2(type='checkbox' data-value='Mint') 
+      label.option.option__selected(for='option-2__2')
+        .option__description
+          | Mint
+      if item.addOns.toppings[2] !== -1    
+        input#option-2__3(type='checkbox' data-value='Sliced Almonds' checked='')
+      else
+        input#option-2__3(type='checkbox' data-value='Sliced Almonds')  
+      label.option.option__selected(for='option-2__3')
+        .option__description
+          | Sliced Almonds
+      if item.addOns.toppings[3] !== -1    
+        input#option-2__4(type='checkbox' data-value='Walnuts' checked='')
+      else
+        input#option-2__4(type='checkbox' data-value='Walnuts') 
+      label.option.option__selected(for='option-2__4')
+        .option__description
+          | Walnuts
+      if item.addOns.toppings[4] !== -1    
+        input#option-2__5(type='checkbox' data-value='Granola' checked='')
+      else
+        input#option-2__5(type='checkbox' data-value='Granola') 
+      label.option.option__selected(for='option-2__5')
+        .option__description
+          | Granola
+      if item.addOns.toppings[5] !== -1    
+        input#option-2__6(type='checkbox' data-value='Bee Pollen' checked='')
+      else
+        input#option-2__6(type='checkbox' data-value='Bee Pollen')
+      label.option.option__selected(for='option-2__6')
+        .option__description
+          | Bee Pollen
+    #drizzleAddOn.option__container
+      h2.heading-2
+        | Drizzle
+        span Choose up to 4
+      if item.addOns.drizzle[0] !== -1  
+        input#option-3__1(type='checkbox' data-value='Agave' checked='')
+      else
+        input#option-3__1(type='checkbox' data-value='Agave')
+      label.option.option__selected(for='option-3__1')
+        .option__description
+          | Agave
+      if item.addOns.drizzle[1] !== -1    
+        input#option-3__2(type='checkbox' data-value='Almond Butter' checked='')
+      else
+        input#option-3__2(type='checkbox' data-value='Almond Butter')
+      label.option.option__selected(for='option-3__2')
+        .option__description
+          | Almond
+          br
+          |  Butter
+      if item.addOns.drizzle[2] !== -1  
+        input#option-3__3(type='checkbox' data-value='Honey' checked='') 
+      else 
+        input#option-3__3(type='checkbox' data-value='Honey')
+      label.option.option__selected(for='option-3__3')
+        .option__description
+          | Honey
+      if item.addOns.drizzle[3] !== -1    
+        input#option-3__4(type='checkbox' data-value='Maple Syrup' checked='')
+      else
+        input#option-3__4(type='checkbox' data-value='Maple Syrup')
+      label.option.option__selected(for='option-3__4')
+        .option__description
+          | Maple Syrup
+      if item.addOns.drizzle[4] !== -1    
+        input#option-3__5(type='checkbox' data-value='Nutella' checked='')
+      else
+        input#option-3__5(type='checkbox' data-value='Nutella')
+      label.option.option__selected(for='option-3__5')
+        .option__description
+          | Nutella
+      if item.addOns.drizzle[5] !== -1    
+        input#option-3__6(type='checkbox' data-value='Peanut Butter' checked='')
+      else
+        input#option-3__6(type='checkbox' data-value='Peanut Butter')
+      label.option.option__selected(for='option-3__6')
+        .option__description
+          | Peanut Butter
+    #powderAddOn.option__container
+      h2.heading-2
+        | Powder
+        span Choose up to 4
+      if item.addOns.powder[0] !== -1  
+        input#option-4__1(type='checkbox' data-value='Chocolate Whey' checked='')
+      else
+        input#option-4__1(type='checkbox' data-value='Chocolate Whey')
+      label.option.option__selected(for='option-4__1')
+        .option__description
+          | Chocolate Whey
+      if item.addOns.powder[1] !== -1    
+       input#option-4__2(type='checkbox' data-value='Matcha' checked='')
+      else
+        input#option-4__2(type='checkbox' data-value='Matcha') 
+      label.option.option__selected(for='option-4__2')
+        .option__description
+          | Matcha
+      if item.addOns.powder[2] !== -1    
+        input#option-4__3(type='checkbox' data-value='Spirulina' checked='')
+      else 
+        input#option-4__3(type='checkbox' data-value='Spirulina')
+      label.option.option__selected(for='option-4__3')
+        .option__description
+          | Spirulina
+      if item.addOns.powder[3] !== -1    
+        input#option-4__4(type='checkbox' data-value='Vanilla Whey Protein' checked='')
+      else 
+        input#option-4__4(type='checkbox' data-value='Vanilla Whey Protein')
+      label.option.option__selected(for='option-4__4')
+        .option__description
+          | Vanilla Whey Protein
+      if item.addOns.powder[4] !== -1    
+        input#option-4__5(type='checkbox' data-value='Wheatgrass' checked='')
+      else 
+        input#option-4__5(type='checkbox' data-value='Wheatgrass') 
+      label.option.option__selected(for='option-4__5')
+        .option__description
+          | Wheatgrass
+      if item.addOns.powder[5] !== -1    
+        input#option-4__6(type='checkbox' data-value='Vegan Chocolate Protein' checked='')
+      else
+        input#option-4__6(type='checkbox' data-value='Vegan Chocolate Protein')  
+      label.option.option__selected(for='option-4__6')
+        .option__description
+          | Vegan Chocholate Protein
+    h3.heading-3
+      | Special Instructions
+      span Optional
+    .finalAction
+      textarea#item-instructions(name='instructions')
+      button.btn.btn-solid.addToCart
+        | Add to cart
+      a.btn.btn__reviewOrder(href='')
+        | Review Order
+include footer.pug      
+script(src='./js/index.js') 

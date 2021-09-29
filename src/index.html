@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acai Brasil</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4a0b67b127.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="nav">
+        <a class="nav-item">
+            <i class="fas fa-shopping-cart"></i><span class="shopCartNum">0</span></a>
+    </nav>
+    <div class="size">
+        <h3 class="heading-3">
+            Select the size
+            <span>Required</span>
+        </h3>
+        
+        <div class="card__container">
+            <input type="radio" name="size" data-size="0" id="size-1" checked>
+            <label class="card" for="size-1">
+                
+                <div class="card__text card__text-1">
+                    12 oz. cup
+                </div>
+                <div class="card__text card__text-2">
+                    $ 6
+                </div>
+                
+            </label>
+            
+            <input type="radio" name="size" id="size-2" data-size="1">
+            <label class="card" for="size-2">
+                
+                <div class="card__text card__text-1">
+                    24 oz. cup
+                </div>
+                <div class="card__text card__text-2">
+                    $ 11
+                </div>
+                
+            </label>
+            
+            <input type="radio" name="size" id="size-3" data-size="2">
+            <label class="card" for="size-3">
+                
+                <div class="card__text card__text-1">
+                    32 oz. bowl
+                </div>
+                <div class="card__text card__text-2">
+                    $ 14
+                </div>
+                
+            </label>
+            <input type="radio" name="size" id="size-4" data-size="3">
+            <label class="card" for="size-4">
+                
+                <div class="card__text card__text-1">
+                    42 oz. bowl
+                </div>
+                <div class="card__text card__text-2">
+                    $ 18
+                </div>
+                
+            </label>
+            
+            
+        </div>
+    </div>
+    
+    <div class="addOn">
+        <h3 class="heading-3">
+            Select your add-ons
+            <span>Optional</span>
+        </h3>
+        
+        <div class="option__container" id="fruitAddOn">
+            <h2 class="heading-2 ">
+                Fruits
+                <span>Choose up to 4</span>
+            </h2>
+            
+            <input type="checkbox" id="option-1__1" data-value="Strawberry">
+            <label class="option option__selected" for="option-1__1">
+                <div class="option__description">
+                    Strawberry
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-1__2" data-value="Banana">
+            <label class="option option__selected" for="option-1__2">
+                <div class="option__description">
+                    Banana
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-1__3" data-value="Kiwi">
+            <label class="option option__selected" for="option-1__3">
+                <div class="option__description">
+                    Kiwi
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-1__4" data-value="Mango">
+            <label class="option option__selected" for="option-1__4">
+                <div class="option__description">
+                    Mango
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-1__5" data-value="Pineapple">
+            <label class="option option__selected" for="option-1__5">
+                <div class="option__description">
+                    Pineapple
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-1__6" data-value="Coconout">
+            <label class="option option__selected" for="option-1__6">
+                <div class="option__description">
+                    Coconout
+                </div>
+                
+            </label>
+            
+        </div>
+        
+        <div class="option__container" id="toppingAddOn">
+            <h2 class="heading-2 ">
+                Topping
+                <span>Choose up to 4</span>
+            </h2>
+            <input type="checkbox" id="option-2__1" data-value="Chia Seeds">
+            <label class="option option__selected" for="option-2__1">
+                <div class="option__description">
+                    Chia Seeds
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-2__2" data-value="Mint">
+            <label class="option option__selected" for="option-2__2">
+                <div class="option__description">
+                    Mint
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-2__3" data-value="Sliced Almonds">
+            <label class="option option__selected" for="option-2__3">
+                <div class="option__description">
+                    Sliced Almonds
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-2__4" data-value="Walnuts">
+            <label class="option option__selected" for="option-2__4">
+                <div class="option__description">
+                    Walnuts
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-2__5" data-value="Granola">
+            <label class="option option__selected" for="option-2__5">
+                <div class="option__description">
+                    Granola
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-2__6" data-value="Bee Pollen">
+            <label class="option option__selected" for="option-2__6">
+                <div class="option__description">
+                    Bee Pollen
+                </div>
+                
+            </label>
+            
+        </div>
+        
+        <div class="option__container" id="drizzleAddOn">
+            <h2 class="heading-2 ">
+                Drizzle
+                <span>Choose up to 4</span>
+            </h2>
+            <input type="checkbox" id="option-3__1" data-value="Agave">
+            <label class="option option__selected" for="option-3__1">
+                <div class="option__description">
+                    Agave
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-3__2" data-value="Almond Butter">
+            <label class="option option__selected" for="option-3__2">
+                <div class="option__description">
+                    Almond<br> Butter
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-3__3" data-value="Honey">
+            <label class="option option__selected" for="option-3__3">
+                <div class="option__description">
+                    Honey
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-3__4" data-value="Maple Syrup">
+            <label class="option option__selected" for="option-3__4">
+                <div class="option__description">
+                    Maple Syrup
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-3__5" data-value="Nutella">
+            <label class="option option__selected" for="option-3__5">
+                <div class="option__description">
+                    Nutella
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-3__6" data-value="Peanut Butter">
+            <label class="option option__selected" for="option-3__6">
+                <div class="option__description">
+                    Peanut Butter
+                </div>
+                
+            </label>
+            
+        </div>
+        
+        <div class="option__container" id="powderAddOn">
+            <h2 class="heading-2 ">
+                Powder
+                <span>Choose up to 4</span>
+            </h2>
+            <input type="checkbox" id="option-4__1" data-value="Chocolate Whey">
+            <label class="option option__selected" for="option-4__1">
+                <div class="option__description">
+                    Chocolate Whey
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-4__2" data-value="Matcha">
+            <label class="option option__selected" for="option-4__2">
+                <div class="option__description">
+                    Matcha
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-4__3" data-value="Spirulina">
+            <label class="option option__selected" for="option-4__3">
+                <div class="option__description">
+                    Spirulina
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-4__4" data-value="Vanilla Whey Protein">
+            <label class="option option__selected" for="option-4__4">
+                <div class="option__description">
+                    Vanilla Whey Protein
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-4__5" data-value="Wheatgrass">
+            <label class="option option__selected" for="option-4__5">
+                <div class="option__description">
+                    Wheatgrass
+                </div>
+                
+            </label>
+            <input type="checkbox" id="option-4__6" data-value="Vegan Chocolate Protein">
+            <label class="option option__selected" for="option-4__6">
+                <div class="option__description">
+                    Vegan Chocholate Protein
+                </div>
+                
+            </label>
+            
+        </div>
+        
+        <h3 class="heading-3">
+            Special Instructions
+            <span>Optional</span>
+        </h3>
+        <div class="finalAction">
+            
+            
+            <textarea name="instructions" id="item-instructions"></textarea>
+            
+            <button class="btn btn-solid addToCart">
+                Add to cart
+            </button>
+            
+            <a href="" class="btn checkoutBtn">
+                Checkout
+            </a>
+        </div>
+        
+        
+        
+        
+    </div>
+    
+</body>
+</html>
