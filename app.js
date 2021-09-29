@@ -12,6 +12,7 @@ const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp =  require('hpp');
+const compression = require('compression');
 
 const app = express();
 
@@ -69,6 +70,7 @@ app.use(function(req, res, next) {
     next();
 })
 
+app.use(compression());
 
 
 
