@@ -36,6 +36,10 @@ html {
   @include respond(phone) {
     font-size: 38%;
   }
+
+  @include respond(reallySmall) {
+    font-size: 25%;
+  }
 }
 
 body {
@@ -389,6 +393,8 @@ main {
   min-height: 30vh;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
   appearance: none !important;
 }

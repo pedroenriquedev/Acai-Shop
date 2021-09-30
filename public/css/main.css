@@ -741,6 +741,12 @@ html {
   }
 }
 
+@media (max-width: 18.75em) {
+  html {
+    font-size: 25%;
+  }
+}
+
 body {
   font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
@@ -1193,7 +1199,9 @@ main {
   min-height: 30vh;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
   -webkit-appearance: none !important;
   -moz-appearance: none !important;
   appearance: none !important;
