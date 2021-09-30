@@ -388,3 +388,7 @@ main {
   align-items: center;
   min-height: 30vh;
 }
+
+input[type="text"] {
+  appearance: none !important;
+}
