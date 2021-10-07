@@ -134,7 +134,7 @@ const createBookingCheckout = async session => {
                     quantity: item.quantity
                 }  
             })
-            
+            /// . 
             const items = await Promise.all(itemsPromise);
             
            const newDoc = await Booking.create({user, price, address, items});
