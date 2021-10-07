@@ -7,6 +7,7 @@ const acaiRouter = require('./routes/acaiRoute');
 const viewRouter = require('./routes/viewRoutes');
 const userRouter = require('./routes/userRoute');
 const bookingRouter = require('./routes/bookingRoute');
+const bookingController = require('./controllers/bookingController');
 const rateLimit =  require('express-rate-limit')
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
@@ -42,6 +43,8 @@ app.set('view engine', 'pug');
 
 app.set('views', path.join(__dirname, 'views'));
 
+app.post('/webhook', express.raw({type: 'application/json'}), bookingController.webhookCheckout);
+
 // body parser reading data from body into req.body
 app.use(
     express.json({ 
@@ -72,6 +75,7 @@ app.use(function(req, res, next) {
 
 app.use(compression());
 
+app.enable('trust proxy');
 
 
 app.use('/', viewRouter);

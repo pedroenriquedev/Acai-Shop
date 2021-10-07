@@ -49,7 +49,7 @@ const sendErrProd = (err, req, res) => {
                 message: err.message
             })
         } else {
-            
+             
             console.log('UNKNOWN ERROR!!', err);
             
             res.status(500).json({

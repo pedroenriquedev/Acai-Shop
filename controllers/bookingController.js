@@ -1,4 +1,6 @@
 const Stripe = require('stripe');
+const Booking = require('../models/bookingModel');
+const User = require('../models/userModel');
 
 const getAcaiName = size => {
     if (size === 0) return 'Acai Cup 12oz';
@@ -26,7 +28,8 @@ const getAcaiAddOns = addOns => {
             }
         });
     });
-    const finalStr = Str.join(', ');
+    let finalStr = Str.join(', ');
+    if (finalStr === '') finalStr = `none`;
     return finalStr;
 }
 
@@ -84,6 +87,82 @@ const createStripeSessionUser =  (lineItems, stripe, req) => {
     });
 }
 
+const createBookingCheckout = async session => {
+    const stripe = Stripe(process.env.STRIPE_SECRET_KEY_DEVELOPMENT);
+
+    if (session.client_reference_id === null) {
+        // create booking for non user
+        try {
+            const price = session.amount_total / 100;
+            const address = `${session.shipping.address.line1}, ${session.shipping.address.city} - ${session.shipping.address.state} (${session.shipping.address.postal_code})`;
+            const name = session.shipping.name;
+            const email = session.customer_details.email;
+            const itemsPromise = session.line_items.data.map(async item => {
+                const product = await stripe.products.retrieve(
+                    item.price.product
+                  );
+                return  {
+                    name : product.name,
+                    addOns: product.description,
+                    price: (item.amount_total / item.quantity) / 100,
+                    quantity: item.quantity
+                }  
+            })
+            
+
+            const items = await Promise.all(itemsPromise);
+            
+           const newDoc = await Booking.create({price, address, items, name, email});
+           console.log(newDoc);
+        } catch (error) {
+            return error;
+        }
+    } else {
+        // creat booking for user
+        try {
+            const user = await User.findById(session.client_reference_id).select(['name', 'email']);
+            const price = session.amount_total / 100;
+            const address = `${session.shipping.address.line1}, ${session.shipping.address.city} - ${session.shipping.address.state} (${session.shipping.address.postal_code})`;
+            const itemsPromise = session.line_items.data.map(async item => {
+                const product = await stripe.products.retrieve(
+                    item.price.product
+                  );
+                return  {
+                    name : product.name,
+                    addOns: product.description,
+                    price: (item.amount_total / item.quantity) / 100,
+                    quantity: item.quantity
+                }  
+            })
+            
+            const items = await Promise.all(itemsPromise);
+            
+           const newDoc = await Booking.create({user, price, address, items});
+        } catch (error) {
+            return error;
+        }
+    }
+}
+
+exports.webhookCheckout = async (req, res, next) => {
+    const stripe = Stripe(process.env.STRIPE_SECRET_KEY_DEVELOPMENT);
+    const signature = req.headers['stripe-signature'];
+    let event;
+    try { 
+        event = stripe.webhooks.constructEvent(req.body, signature, process.env.STRIPE_WEBHOOK_SECRET);
+        // event = stripe.webhooks.constructEvent(req.body, signature, 'whsec_HwgR4wCotn9t9MiVprM3EFp4O5e5MKuz');
+    } catch (error) {
+        return res.status(400).send(`webhook error: ${error.message}`)
+    }
+    
+    if (event.type === 'checkout.session.completed') {
+        const session = await stripe.checkout.sessions.retrieve(event.data.object.id, {expand: ['line_items'],});
+        createBookingCheckout(session);
+       //console.log(session.line_items.data);
+    }
+
+    res.status(200).json({received: true}).end();
+};
 
 exports.getCheckoutSession = async (req, res, next) => {
     const stripe = Stripe(process.env.STRIPE_SECRET_KEY_DEVELOPMENT);

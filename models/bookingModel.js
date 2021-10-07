@@ -19,8 +19,11 @@ const bookingSchema = new mongoose.Schema({
     email: {
         type: String
     },
-    adress: {
+    address: {
         type: String
+    },
+    items: {
+        type: Array
     }
 });
 
