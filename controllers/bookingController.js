@@ -175,7 +175,7 @@ exports.webhookCheckout = async (req, res, next) => {
         //event = stripe.webhooks.constructEvent(req.body, signature, endPointSecret);
     } catch (error) {
         return res.status(400).send(`webhook error: ${error.message}`)
-    }
+    } 
     
     if (event.type === 'checkout.session.completed') {
         const session = await stripe.checkout.sessions.retrieve(event.data.object.id, {expand: ['line_items'],});
