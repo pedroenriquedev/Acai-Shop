@@ -6,4 +6,5 @@ const authController = require('../controllers/authController');
 
 router.post('/checkout-session', authController.isLoggedIn,bookingController.getCheckoutSession);
 
+
 module.exports = router;

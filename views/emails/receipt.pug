@@ -1,0 +1,26 @@
+extends baseEmail
+
+block content
+    p Hi #{firstName},
+    p We are processing your order.
+    p Please confirm the items and address.
+    p --------------------------
+        each item, i in booking.items
+            p #{item.name}
+            p Add-ons: #{item.addOns}
+            p Price: $#{item.price}
+            p Quantity: #{item.quantity}
+            p --------------------------
+    p Address: #{booking.address}
+    p Total: $#{booking.price}
+    table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+        tbody
+            tr 
+                td(align='left')
+                    table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+                        tbody
+                            tr
+                                td
+                                    a(href=`${url}`, target='_blank') Order more Acais
+    p If the information is wrong or you have not made an order with us, please contact us immediately at support@acaibrasil.com                                
+    p Thank you, Acai Brasil Team

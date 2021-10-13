@@ -1,6 +1,7 @@
 const Stripe = require('stripe');
 const Booking = require('../models/bookingModel');
 const User = require('../models/userModel');
+const Email = require('../util/email');
 
 const getAcaiName = size => {
     if (size === 0) return 'Acai Cup 12oz';
@@ -112,9 +113,18 @@ const createBookingCheckout = async session => {
 
             const items = await Promise.all(itemsPromise);
             
-           const newDoc = await Booking.create({price, address, items, name, email});
-           console.log(newDoc);
-        } catch (error) {
+           const newBooking = await Booking.create({price, address, items, name, email});
+
+           const key = {
+               user : {
+                   name: name,
+                   email: email
+               }
+           }
+
+           const booking = {...newBooking._doc, ...key};
+           return booking;
+        } catch (error) { 
             return error;
         }
     } else {
@@ -134,13 +144,25 @@ const createBookingCheckout = async session => {
                     quantity: item.quantity
                 }  
             })
-            /// . 
+    
             const items = await Promise.all(itemsPromise);
             
-           const newDoc = await Booking.create({user, price, address, items});
+           const newBooking = await Booking.create({user, price, address, items});
+           return newBooking; 
         } catch (error) {
             return error;
         }
+    }
+}
+
+const sendEmail = async (booking, session, req) => {
+    const url = `${req.protocol}://${req.get('host')}`;
+    if (session.client_reference_id === null) { 
+        // send email to non user
+        await new Email(booking.user, url, booking).sendReceipt();
+    } else {
+        // send email to user
+        await new Email(booking.user, url, booking).sendReceipt();
     }
 }
 
@@ -150,15 +172,16 @@ exports.webhookCheckout = async (req, res, next) => {
     let event;
     try { 
         event = stripe.webhooks.constructEvent(req.body, signature, process.env.STRIPE_WEBHOOK_SECRET);
-        
+        //event = stripe.webhooks.constructEvent(req.body, signature, endPointSecret);
     } catch (error) {
         return res.status(400).send(`webhook error: ${error.message}`)
     }
     
     if (event.type === 'checkout.session.completed') {
         const session = await stripe.checkout.sessions.retrieve(event.data.object.id, {expand: ['line_items'],});
-        createBookingCheckout(session);
-       //console.log(session.line_items.data);
+        const booking = await createBookingCheckout(session);
+        
+        sendEmail(booking, session, req);
     }
 
     res.status(200).json({received: true}).end();

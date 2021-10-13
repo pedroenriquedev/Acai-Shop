@@ -43,7 +43,7 @@ app.set('view engine', 'pug');
 
 app.set('views', path.join(__dirname, 'views'));
 
-app.post('/webhook', express.raw({type: 'application/json'}), bookingController.webhookCheckout);
+app.post('/webhook-checkout', express.raw({type: 'application/json'}), bookingController.webhookCheckout);
 
 // body parser reading data from body into req.body
 app.use(
