@@ -83,10 +83,9 @@ block content
       - return total;
       - }
       span.total  #{getTotal(items)}
-    if user  
-      a#checkoutBtn.btn.btn__checkout(href='#') Checkout
-    else 
-      a#checkoutBtn.btn.btn__checkout(href='#') Checkout as a guest
     a.btn.btn__addItems(href='/') Add more items
-    
-     
+    if user  
+      a#checkoutBtn.btn.btn__checkout.btn-solid(href='#') Checkout
+    else 
+      a#checkoutBtn.btn.btn__checkout.btn-solid(href='#') Checkout as a guest
+

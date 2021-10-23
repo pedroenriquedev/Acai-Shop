@@ -11,16 +11,24 @@ html(lang='en')
   body.login
     include navBar.pug
     form.loginForm
-      input#loginFormEmail(class='loginForm__email' type='email' placeholder='Email' required)
-      input#loginFormPassword(class='loginForm__password' type='password' placeholder='Password' required)
+      label(for='loginFormEmail') Email
+      input#loginFormEmail(class='loginForm__email' type='email' required)
+      label(for='loginFormPassword') Password
+      input#loginFormPassword(class='loginForm__password' type='password' required)
       a.link.link__forgotPassword(href='') Forgot your password?
       button(class='btn login__btn') Login
     .orBox or
     form.signUpForm
-      input(class='signUp__name' type='text' placeholder='Name' required)
-      input#formEmail(class='signUp__email' type='email' placeholder='Email' required)
-      input#formPassword(class='signUp__password' type='password' placeholder='Password' required)
-      input#formPasswordConfirm(class='signUp__confirmPassword' type='password' placeholder='Confirm Password' required) 
+      label(for='formName') Name
+      input#formName(class='signUp__name' type='text' required)
+      label(for='formEmail') Email
+      input#formEmail(class='signUp__email' type='email' required)
+      label(for='formPassword') Password
+      h3.heading-3 
+        span Should contain at least 8 characters
+      input#formPassword(class='signUp__password' type='password' required)
+      label(for='formPasswordConfirm') Confirm Password
+      input#formPasswordConfirm(class='signUp__confirmPassword' type='password' required) 
       button(class='btn signUp__btn') Sign up
     include footer.pug
   script(src='./js/index.js')

@@ -72,7 +72,7 @@ const signUp = async (name, email, password, passwordConfirm) => {
     if (res.data.status === 'success') {
       showAlert('success', 'Your account has been created!')
       window.setTimeout(() => { location.assign('/') }, 1500)
-    }
+    } 
   }
   
   catch (err) {

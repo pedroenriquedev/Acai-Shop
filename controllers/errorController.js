@@ -12,8 +12,12 @@ const handleDuplicateFieldsDB = err => {
 }
 
 const handleValidationErrorDB = err => {
-    const msg = err.message;
-    return new AppError(msg, 400);
+    let msg = err.message;
+    const finalMsg = [];
+    if (msg.includes('Path `password`')) finalMsg.push('Password must be at least 8 characters.'); 
+    if (msg.includes('passwordConfirm')) finalMsg.push("Passwords don't match."); 
+
+    return new AppError(finalMsg.join(' '), 400);
 }
 
 const handleJWTError = err => new AppError('Invalid token. Please log in again!', 401);
@@ -79,10 +83,9 @@ module.exports = (err, req, res, next) => {
         
         
         let error = {...err, message: err.message};
-        
         if (error.name === 'CastError') error = handleCastErrorDB(error);
         if (error.code === 11000) error = handleDuplicateFieldsDB(error);
-        if (error.name === 'ValidationError') error = handleValidationErrorDB(error);
+        if (error._message === 'User validation failed') error = handleValidationErrorDB(error);
         if (error.name === 'JsonWebTokenError') error = handleJWTError(error);
         if (error.name === 'TokenExpiredError') error = handleJWTExpiredError(error);
         sendErrProd(error, req, res);
