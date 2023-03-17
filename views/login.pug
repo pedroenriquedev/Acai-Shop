@@ -11,6 +11,7 @@ html(lang='en')
   body.login
     include navBar.pug
     form.loginForm
+      h3 Log In
       label(for='loginFormEmail') Email
       input#loginFormEmail(class='loginForm__email' type='email' required)
       label(for='loginFormPassword') Password
@@ -19,6 +20,7 @@ html(lang='en')
       button(class='btn login__btn') Login
     .orBox or
     form.signUpForm
+      h3 Sign up
       label(for='formName') Name
       input#formName(class='signUp__name' type='text' required)
       label(for='formEmail') Email
