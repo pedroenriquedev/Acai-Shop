@@ -587,7 +587,7 @@ html {
     font-size: 38%;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 380px) {
   html {
     font-size: 25%;
   }
