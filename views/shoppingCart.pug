@@ -25,7 +25,18 @@ block content
         li(class="shoppingCart__item shoppingCart__item-"+i)
           button.shoppingCart__item-remove remove
           a.shoppingCart__item-edit(href='#') edit
-          .img
+          if item.size === 0
+            .img 
+              .cup.cup--sm
+          else if item.size === 1
+            .img 
+              .cup.cup--lg
+          else if item.size === 2
+            .img 
+              .bowl.bowl--sm
+          else if item.size === 3
+            .img 
+              .bowl.bowl--lg
           .shoppingCart__item-description
             if item.size === 0
               h2 12 oz. cup
@@ -82,7 +93,7 @@ block content
       - items.forEach((el, i) => total = total + el.price);
       - return total;
       - }
-      span.total  #{getTotal(items)}
+      span.total #{getTotal(items)}
     a.btn.btn__addItems(href='/') Add more items
     if user  
       a#checkoutBtn.btn.btn__checkout.btn-solid(href='#') Checkout

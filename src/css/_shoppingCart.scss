@@ -1,15 +1,53 @@
 @import "_queryMixins.scss";
 
 .img {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 15rem;
-  background: var(--seconday-color);
+  // border: solid 1px var(--seconday-color);
   border-radius: 12px;
   align-self: center;
 
   @include respond(phone) {
     height: 12rem;
+  }
+}
+
+.cup {
+  background-image: url('../img/plastic-cup.svg');
+  background-size: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: invert(78%) sepia(53%) saturate(5267%) hue-rotate(208deg) brightness(96%) contrast(96%);
+
+  &--sm {
+    width: 35%;
+    height: 35%;
+  }
+
+  &--lg {
+    width: 50%;
+    height: 50%;
+  }
+}
+
+.bowl {
+  background-image: url('../img/bowl.svg');
+  background-size: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: invert(78%) sepia(53%) saturate(5267%) hue-rotate(208deg) brightness(96%) contrast(96%);
+
+  &--sm {
+    width: 35%;
+    height: 35%;
+  }
+
+  &--lg {
+    width: 50%;
+    height: 50%;
   }
 }
 

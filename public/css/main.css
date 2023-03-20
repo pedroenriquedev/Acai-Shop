@@ -117,10 +117,11 @@ $breakpoint arguement choices:
 - big-desktop  
 */
 .img {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 15rem;
-  background: var(--seconday-color);
   border-radius: 12px;
   align-self: center;
 }
@@ -128,6 +129,38 @@ $breakpoint arguement choices:
   .img {
     height: 12rem;
   }
+}
+
+.cup {
+  background-image: url("../img/plastic-cup.svg");
+  background-size: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: invert(78%) sepia(53%) saturate(5267%) hue-rotate(208deg) brightness(96%) contrast(96%);
+}
+.cup--sm {
+  width: 35%;
+  height: 35%;
+}
+.cup--lg {
+  width: 50%;
+  height: 50%;
+}
+
+.bowl {
+  background-image: url("../img/bowl.svg");
+  background-size: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: invert(78%) sepia(53%) saturate(5267%) hue-rotate(208deg) brightness(96%) contrast(96%);
+}
+.bowl--sm {
+  width: 35%;
+  height: 35%;
+}
+.bowl--lg {
+  width: 50%;
+  height: 50%;
 }
 
 .shoppingCart {
