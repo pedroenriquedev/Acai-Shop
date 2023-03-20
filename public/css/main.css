@@ -125,7 +125,7 @@ $breakpoint arguement choices:
   border-radius: 12px;
   align-self: center;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 600px) {
   .img {
     height: 12rem;
   }
@@ -174,12 +174,12 @@ $breakpoint arguement choices:
   box-shadow: 0px 0px 33px 0px rgba(0, 0, 0, 0.45);
   transition: all 0.2s;
 }
-@media only screen and (max-width: 75em) {
+@media only screen and (max-width: 1200px) {
   .shoppingCart {
     padding: 2rem 2rem;
   }
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 600px) {
   .shoppingCart {
     font-size: 1.2rem;
     padding: 2rem 1rem;
@@ -204,12 +204,12 @@ $breakpoint arguement choices:
   display: grid;
   grid-template-columns: 15rem 2fr 1fr 1fr 1fr;
 }
-@media only screen and (max-width: 56.25em) {
+@media only screen and (max-width: 900px) {
   .shoppingCart__label, .shoppingCart__item {
     grid-template-columns: 15rem 6fr 3fr 1fr 1fr;
   }
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 600px) {
   .shoppingCart__label, .shoppingCart__item {
     grid-template-columns: 12rem 6fr 2fr 1fr 1fr;
   }
@@ -222,7 +222,7 @@ $breakpoint arguement choices:
   color: rgba(65, 70, 61, 0.6);
   margin-bottom: 2rem;
 }
-@media only screen and (max-width: 56.25em) {
+@media only screen and (max-width: 900px) {
   .shoppingCart__label {
     gap: 5px;
   }
@@ -249,7 +249,7 @@ $breakpoint arguement choices:
   margin: 5rem 0;
   position: relative;
 }
-@media only screen and (max-width: 56.25em) {
+@media only screen and (max-width: 900px) {
   .shoppingCart__item {
     gap: 5px;
   }
@@ -260,12 +260,12 @@ $breakpoint arguement choices:
   gap: 12px;
   min-height: 16rem;
 }
-@media only screen and (max-width: 56.25em) {
+@media only screen and (max-width: 900px) {
   .shoppingCart__item-description {
     gap: 8px;
   }
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 600px) {
   .shoppingCart__item-description {
     gap: 2px;
   }
@@ -273,7 +273,7 @@ $breakpoint arguement choices:
 .shoppingCart__item-description ul {
   list-style-type: none;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 600px) {
   .shoppingCart__item-description ul h3 {
     font-size: 1.5rem;
   }
@@ -285,7 +285,7 @@ $breakpoint arguement choices:
   grid-column: -1/1;
   place-self: center;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 600px) {
   .shoppingCart__item-description h2 {
     font-size: 1.5rem;
   }
@@ -310,7 +310,7 @@ $breakpoint arguement choices:
 .shoppingCart__item-quantity button:hover {
   transform: scale(1.07);
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 600px) {
   .shoppingCart__item-quantity button {
     width: 2rem;
     height: 2rem;
@@ -577,17 +577,17 @@ html {
   font-size: 62.5%;
   min-height: 100vh;
 }
-@media only screen and (max-width: 56.25em) {
+@media only screen and (max-width: 900px) {
   html {
     font-size: 50%;
   }
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 600px) {
   html {
     font-size: 38%;
   }
 }
-@media only screen and (max-width: 18.75em) {
+@media only screen and (max-width: 300px) {
   html {
     font-size: 25%;
   }
@@ -603,12 +603,12 @@ body {
   min-height: 100vh;
   background-image: linear-gradient(to right top, #6b2a59, #6b3266, #6a3a73, #664280, #604b8d);
 }
-@media only screen and (max-width: 56.25em) {
+@media only screen and (max-width: 900px) {
   body {
     padding: 3rem 3rem;
   }
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 600px) {
   body {
     padding: 3rem 0rem;
   }
@@ -742,7 +742,7 @@ footer {
 .card:hover {
   background: #f3f3f3;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 600px) {
   .card {
     width: 12rem;
     height: 15rem;
@@ -808,24 +808,24 @@ input[type=checkbox]:checked + label:hover {
   gap: 4rem;
   align-items: center;
 }
-@media only screen and (max-width: 75em) {
+@media only screen and (max-width: 1200px) {
   .addOn .option__container {
     gap: 1.5rem;
     margin-left: 1rem;
   }
 }
-@media only screen and (max-width: 56.25em) {
+@media only screen and (max-width: 900px) {
   .addOn .option__container {
     gap: 0.6rem;
     margin: 0 auto;
   }
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 600px) {
   .addOn .option__container {
     grid-template-columns: 9rem repeat(6, 8rem);
   }
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 600px) {
   .addOn .option__container .heading-2 {
     grid-column: -1/1;
   }
@@ -849,7 +849,7 @@ input[type=checkbox]:checked + label:hover {
   padding: 0 1rem;
   transition: all 0.1s;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 600px) {
   .addOn .option__container .option {
     font-size: 1.1rem;
   }
@@ -935,12 +935,12 @@ main {
   margin-top: 5rem;
   padding: 0 5rem;
 }
-@media only screen and (max-width: 56.25em) {
+@media only screen and (max-width: 900px) {
   main {
     padding: 0 2rem;
   }
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 600px) {
   main {
     padding: 0 0.5rem;
   }
