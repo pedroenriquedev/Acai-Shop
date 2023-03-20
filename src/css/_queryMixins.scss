@@ -15,7 +15,7 @@ $breakpoint arguement choices:
 
 @mixin respond($breakpoint) {
   @if $breakpoint == reallySmall {
-    @media only screen and (max-width: 300px) {
+    @media only screen and (max-width: 350px) {
       @content;
     } // 300px
   }
