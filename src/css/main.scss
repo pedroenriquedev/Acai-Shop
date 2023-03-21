@@ -23,11 +23,6 @@
 html {
   box-sizing: inherit;
   font-size: 62.5%;
-}
-
-html {
-  box-sizing: inherit;
-  font-size: 62.5%;
   min-height: 100vh;
   @include respond(tab-port) {
     font-size: 50%;
