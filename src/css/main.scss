@@ -1,8 +1,4 @@
 @import "_queryMixins.scss";
-@import "_login.scss";
-@import "_shoppingCart.scss";
-@import "_footer.scss";
-@import "_spinner.scss";
 
 :root {
   --primary-color: #6b2a59;
@@ -456,3 +452,9 @@ input[type="email"],
 input[type="password"] {
   appearance: none !important;
 }
+
+@import "_login.scss";
+@import "_shoppingCart.scss";
+@import "_footer.scss";
+@import "_spinner.scss";
+
