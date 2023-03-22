@@ -1,5 +1,15 @@
 @import "_queryMixins.scss";
 
+// animations
+@keyframes slideFromRightFadeIn {
+  from {
+    left: 6%;
+    opacity: 0;}
+  to {opacity: 100%;
+  left: 0;}
+}
+
+
 :root {
   --primary-color: #6b2a59;
   --seconday-color: #9d8df1;
@@ -57,7 +67,11 @@ body {
     padding: 3rem 0rem;
   }
 }
+
+
+
 nav {
+  
   .nav-main {
     display: flex;
     justify-content: space-between;
@@ -135,7 +149,29 @@ footer {
   }
 }
 
+.slideFromRightFadeIn {
+  animation-name: slideFromRightFadeIn;
+  animation-duration: 1s;
+}
+
 .card {
+  position: relative;
+  animation-name: slideFromRightFadeIn;
+  &:nth-of-type(1) {
+    animation-duration: .5s;
+  }
+
+  &:nth-of-type(2) {
+    animation-duration: .6s;
+  }
+
+  &:nth-of-type(3) {
+    animation-duration: .7s;
+  }
+
+  &:nth-of-type(4) {
+    animation-duration: .8s;
+  }
   cursor: pointer;
   &__container {
     display: flex;
@@ -320,6 +356,10 @@ input[type="checkbox"]:checked + label {
       text-align: center;
       padding: 0 1rem;
       transition: all 0.1s;
+      position: relative;
+      animation: slideFromRightFadeIn;
+      animation-duration: .8s;
+      
 
       @include respond(phone) {
         font-size: 1.1rem;

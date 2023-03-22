@@ -134,12 +134,13 @@
     justify-items: center;
     align-items: center;
     margin: 5rem 0;
-
     position: relative;
     @include respond(tab-port) {
       gap: 5px;
     }
 
+    animation-name: slideFromRightFadeIn;
+    animation-duration: .5s;
     &-description {
       display: grid;
       grid-template-columns: 1fr 1fr;

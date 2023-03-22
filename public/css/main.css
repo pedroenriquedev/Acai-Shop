@@ -11,6 +11,16 @@ $breakpoint arguement choices:
 - tab-land
 - big-desktop  
 */
+@keyframes slideFromRightFadeIn {
+  from {
+    left: 6%;
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+    left: 0;
+  }
+}
 :root {
   --primary-color: #6b2a59;
   --seconday-color: #9d8df1;
@@ -144,7 +154,14 @@ footer {
   font-weight: 400;
 }
 
+.slideFromRightFadeIn {
+  animation-name: slideFromRightFadeIn;
+  animation-duration: 1s;
+}
+
 .card {
+  position: relative;
+  animation-name: slideFromRightFadeIn;
   cursor: pointer;
   color: var(--primary-color);
   background: #fafafa;
@@ -159,6 +176,18 @@ footer {
   justify-content: flex-end;
   align-items: center;
   transition: box-shadow 0.2s;
+}
+.card:nth-of-type(1) {
+  animation-duration: 0.5s;
+}
+.card:nth-of-type(2) {
+  animation-duration: 0.6s;
+}
+.card:nth-of-type(3) {
+  animation-duration: 0.7s;
+}
+.card:nth-of-type(4) {
+  animation-duration: 0.8s;
 }
 .card__container {
   display: flex;
@@ -303,6 +332,9 @@ input[type=checkbox]:checked + label:hover {
   text-align: center;
   padding: 0 1rem;
   transition: all 0.1s;
+  position: relative;
+  animation: slideFromRightFadeIn;
+  animation-duration: 0.8s;
 }
 @media only screen and (max-width: 600px) {
   .addOn .option__container .option {
@@ -672,6 +704,8 @@ $breakpoint arguement choices:
   align-items: center;
   margin: 5rem 0;
   position: relative;
+  animation-name: slideFromRightFadeIn;
+  animation-duration: 0.5s;
 }
 @media only screen and (max-width: 900px) {
   .shoppingCart__item {
@@ -838,7 +872,6 @@ $breakpoint arguement choices:
 }
 
 .footer {
-  background-image: linear-gradient(to right top, #6b2a59, #6b3266, #6a3a73, #664280, #604b8d);
   min-height: 30rem;
   margin-top: 5rem;
   padding: 2rem 4rem;
