@@ -11,7 +11,7 @@
   align-self: center;
 
   @include respond(phone) {
-    height: 12rem;
+    display: none;
   }
 }
 
@@ -97,7 +97,10 @@
     }
 
     @include respond(phone) {
-      grid-template-columns: 12rem 6fr 2fr 1fr 1fr;
+      grid-template-columns: 8px 4fr 2fr 1fr 1fr;
+      padding: 1rem 0;
+      align-items: center;
+      align-content: center;
     }
   }
 
@@ -151,6 +154,9 @@
       }
       @include respond(phone) {
         gap: 2px;
+        width: 100%;
+        grid-column: 2 / 3;
+        gap:6px;
       }
 
       ul {

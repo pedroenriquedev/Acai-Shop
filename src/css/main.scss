@@ -35,12 +35,9 @@ html {
   }
 
   @include respond(phone) {
-    font-size: 38%;
+    font-size: 45%;
   }
 
-  @include respond(reallySmall) {
-    font-size: 25%;
-  }
 }
 
 body {
@@ -55,7 +52,7 @@ body {
     to right top,
     #6b2a59,
     #6b3266,
-    #6a3a73,
+    #6a3a73, 
     #664280,
     #604b8d
   );
@@ -147,6 +144,9 @@ footer {
     font-size: 1.1rem;
     font-weight: 400;
   }
+  @include respond(phone) {
+    padding-left: 4rem;
+  }
 }
 
 .slideFromRightFadeIn {
@@ -176,6 +176,17 @@ footer {
   &__container {
     display: flex;
     justify-content: space-between;
+
+    @include respond(phone) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      align-content: center;
+      justify-items: center;
+      width: fit-content;
+      gap: 4rem;
+      margin: 0 auto;
+    }
   }
 
   &__bowl {
@@ -328,7 +339,7 @@ input[type="checkbox"]:checked + label {
     }
 
     @include respond(phone) {
-      grid-template-columns: 9rem repeat(6, 8rem);
+      grid-template-columns: 9rem repeat(2, 9rem);
     }
 
     .heading-2 {
@@ -369,6 +380,10 @@ input[type="checkbox"]:checked + label {
 
   .finalAction {
     margin-left: 17.5rem;
+    @include respond(phone) {
+      margin: 0 auto;
+      width: 80%;
+    }
     textarea {
       display: block;
       width: 100%;
@@ -382,6 +397,7 @@ input[type="checkbox"]:checked + label {
       color: var(--dark-color);
       margin-bottom: 5rem;
       background: #fafafa;
+      
     }
 
     a:first-of-type {
@@ -427,6 +443,9 @@ nav,
 .footer {
   background: #fafafa;
   padding: 2rem 5rem;
+  @include respond(phone) {
+    padding: 1rem 2.5rem;
+  }
 }
 
 .size,

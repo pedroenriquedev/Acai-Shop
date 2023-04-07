@@ -49,12 +49,7 @@ html {
 }
 @media only screen and (max-width: 600px) {
   html {
-    font-size: 38%;
-  }
-}
-@media only screen and (max-width: 300px) {
-  html {
-    font-size: 25%;
+    font-size: 45%;
   }
 }
 
@@ -153,6 +148,11 @@ footer {
   font-size: 1.1rem;
   font-weight: 400;
 }
+@media only screen and (max-width: 600px) {
+  .heading-3 {
+    padding-left: 4rem;
+  }
+}
 
 .slideFromRightFadeIn {
   animation-name: slideFromRightFadeIn;
@@ -192,6 +192,19 @@ footer {
 .card__container {
   display: flex;
   justify-content: space-between;
+}
+@media only screen and (max-width: 600px) {
+  .card__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    gap: 4rem;
+    margin: 0 auto;
+  }
 }
 .card__bowl {
   background-image: url("../img/bowl.svg");
@@ -306,7 +319,7 @@ input[type=checkbox]:checked + label:hover {
 }
 @media only screen and (max-width: 600px) {
   .addOn .option__container {
-    grid-template-columns: 9rem repeat(6, 8rem);
+    grid-template-columns: 9rem repeat(2, 9rem);
   }
 }
 @media only screen and (max-width: 600px) {
@@ -343,6 +356,12 @@ input[type=checkbox]:checked + label:hover {
 }
 .addOn .finalAction {
   margin-left: 17.5rem;
+}
+@media only screen and (max-width: 600px) {
+  .addOn .finalAction {
+    margin: 0 auto;
+    width: 80%;
+  }
 }
 .addOn .finalAction textarea {
   display: block;
@@ -398,6 +417,12 @@ nav,
 .footer {
   background: #fafafa;
   padding: 2rem 5rem;
+}
+@media only screen and (max-width: 600px) {
+  nav,
+  .footer {
+    padding: 1rem 2.5rem;
+  }
 }
 
 .size,
@@ -583,7 +608,7 @@ $breakpoint arguement choices:
 }
 @media only screen and (max-width: 600px) {
   .img {
-    height: 12rem;
+    display: none;
   }
 }
 
@@ -667,7 +692,10 @@ $breakpoint arguement choices:
 }
 @media only screen and (max-width: 600px) {
   .shoppingCart__label, .shoppingCart__item {
-    grid-template-columns: 12rem 6fr 2fr 1fr 1fr;
+    grid-template-columns: 8px 4fr 2fr 1fr 1fr;
+    padding: 1rem 0;
+    align-items: center;
+    align-content: center;
   }
 }
 .shoppingCart__label {
@@ -726,6 +754,9 @@ $breakpoint arguement choices:
 @media only screen and (max-width: 600px) {
   .shoppingCart__item-description {
     gap: 2px;
+    width: 100%;
+    grid-column: 2/3;
+    gap: 6px;
   }
 }
 .shoppingCart__item-description ul {
